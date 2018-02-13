@@ -4,7 +4,7 @@
     <Files>
       <File FileName="Assets/PlayMusic.cs" Line="10" Column="52" />
       <File FileName="Assets/Utility/WaypointCircuit.cs" Line="255" Column="57" />
-      <File FileName="Assets/Player.cs" Line="12" Column="59" />
+      <File FileName="Assets/Player.cs" Line="44" Column="9" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
