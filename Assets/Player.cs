@@ -12,9 +12,10 @@ public class Player : MonoBehaviour {
     [Tooltip("in m/s")] [SerializeField] float xSpeed;
     [Tooltip("in m/s")] [SerializeField] float ySpeed;
 
-    [SerializeField] float positionPitchFactor = -5f;
+    [SerializeField] float positionPitchFactor = -2f;
     [SerializeField] float controlPitchFactor = -20f;
-    [SerializeField] float positionYawFactor = 5f;
+    [SerializeField] float positionYawFactor = 1f;
+    [SerializeField] float controlYawFactor = 20f;
     [SerializeField] float controlRollFactor = -20f;
 	
 
@@ -39,7 +40,10 @@ public class Player : MonoBehaviour {
         float pitchDueToControlThrow = yThrow * controlPitchFactor;
         float pitch = pitchDueToPosition + pitchDueToControlThrow;
 
-        float yaw = transform.localPosition.x * positionYawFactor;
+        float yawDueToPosition = transform.localPosition.x * positionYawFactor;
+        float yawchDueToControlThrow = xThrow * controlYawFactor;
+
+        float yaw = yawDueToPosition + yawchDueToControlThrow;
 
         float roll = xThrow * controlRollFactor;
 
