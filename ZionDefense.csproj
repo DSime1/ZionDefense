@@ -111,8 +111,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Player.cs" />
-    <Compile Include="Assets\PlayMusic.cs" />
+    <Compile Include="Assets\Script\Player.cs" />
+    <Compile Include="Assets\Script\PlayMusic.cs" />
+    <Compile Include="Assets\Script\SceneLoader.cs" />
     <Compile Include="Assets\Utility\ActivateTrigger.cs" />
     <Compile Include="Assets\Utility\AlphaButtonClickMask.cs" />
     <Compile Include="Assets\Utility\AutoMobileShaderSwitch.cs" />
