@@ -563,6 +563,7 @@ GameObject:
   - component: {fileID: 54259416053139504}
   - component: {fileID: 65226349785738892}
   - component: {fileID: 114443300761328606}
+  - component: {fileID: 114161611359521464}
   m_Layer: 0
   m_Name: PlayerShip
   m_TagString: Untagged
@@ -2083,7 +2084,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2407,6 +2408,17 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.924384, y: 2.5514894, z: 8.203817}
   m_Center: {x: -0.1944246, y: -1.2046344, z: -2.0457175}
+--- !u!114 &114161611359521464
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1849848438348356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e786418ca90d4c81a671a52d7c2e82f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114443300761328606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2415,7 +2427,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1849848438348356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d9930d7d4ae64744b33c89cb79642f1, type: 3}
+  m_Script: {fileID: 11500000, guid: 4feb22bbf23614019a34e9a070ec88b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   xSpeed: 15
