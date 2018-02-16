@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour {
     Collider enemyboxCollider = new Collider();
 
     [SerializeField] int scorePerHit = 12;
+    [SerializeField] int Health = 20;
 
     [SerializeField] GameObject deathFX;
 
@@ -19,11 +20,21 @@ public class Enemy : MonoBehaviour {
     {
         scoreBoard.ScoreHit(scorePerHit);
 
+        Health = --Health;
 
+        //todo consider adding bullet collision sound
+        if (Health <= 0)
+        {
+            KillEnemy();
+        } 
+    }
+
+    private void KillEnemy()
+    {
         //Adding explosion effect 'deathFX' to enemy ship
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
-        print("enemyHit: "+ gameObject.name);
+        print("enemyHit: " + gameObject.name);
 
         //giving the deathFx objects a parent object 'parent' in the hierarchy
         fx.transform.parent = parent;
@@ -33,6 +44,7 @@ public class Enemy : MonoBehaviour {
     void Start ()
     {
         scoreBoard = FindObjectOfType<ScoreBoard>();
+
 
         //if the game object already has a boxcollider then don't add
         if (!gameObject.GetComponent<BoxCollider>())
