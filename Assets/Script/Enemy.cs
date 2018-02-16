@@ -5,12 +5,21 @@ using UnityEngine;
 public class Enemy : MonoBehaviour {
 
     Collider enemyboxCollider = new Collider();
+
+    [SerializeField] int scorePerHit = 12;
+
     [SerializeField] GameObject deathFX;
+
     [SerializeField] Transform parent;
+
+    ScoreBoard scoreBoard;
  
 
     private void OnParticleCollision(GameObject other)
     {
+        scoreBoard.ScoreHit(scorePerHit);
+
+
         //Adding explosion effect 'deathFX' to enemy ship
         GameObject fx = Instantiate(deathFX, transform.position, Quaternion.identity);
         Destroy(gameObject);
@@ -22,7 +31,9 @@ public class Enemy : MonoBehaviour {
 
     // Use this for initialization
     void Start ()
-    { 
+    {
+        scoreBoard = FindObjectOfType<ScoreBoard>();
+
         //if the game object already has a boxcollider then don't add
         if (!gameObject.GetComponent<BoxCollider>())
         {
