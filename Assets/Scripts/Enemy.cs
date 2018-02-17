@@ -6,8 +6,8 @@ public class Enemy : MonoBehaviour {
 
     Collider enemyboxCollider = new Collider();
 
-    [SerializeField] int scorePerHit = 12;
-    [SerializeField] int Health = 20;
+    [SerializeField] int scorePerHit = 10;
+    [SerializeField] int MaxHit = 1;
 
     [SerializeField] GameObject deathFX;
 
@@ -20,10 +20,10 @@ public class Enemy : MonoBehaviour {
     {
         scoreBoard.ScoreHit(scorePerHit);
 
-        Health = --Health;
+        MaxHit = MaxHit - 1;
 
         //todo consider adding bullet collision sound
-        if (Health <= 0)
+        if (MaxHit <= 0)
         {
             KillEnemy();
         } 
